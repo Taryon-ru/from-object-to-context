@@ -1,5 +1,5 @@
 /* =========================================================
-   От объекта к системе
+   От объекта к контектсту
    Book typography
    ========================================================= */
 
@@ -13,7 +13,7 @@
 
 :root {
   /* mdBook uses 62.5%; restore standard rem scale */
-  font-size: 100%;
+  font-size: 100% !important;
 
   --book-content-width: 820px;
   --book-text-size: 18px;
