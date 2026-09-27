@@ -1,0 +1,585 @@
+/* =========================================================
+   От объекта к системе
+   Book typography
+   ========================================================= */
+
+@font-face {
+  font-family: "Golos Text";
+  src: url("assets/fonts/GolosText-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+:root {
+  /* mdBook uses 62.5%; restore standard rem scale */
+  font-size: 100%;
+
+  --book-content-width: 820px;
+  --book-text-size: 18px;
+  --book-text-line-height: 1.65;
+  --book-heading-line-height: 1.2;
+}
+
+/* ---------------------------------------------------------
+   Base
+   --------------------------------------------------------- */
+
+html,
+body {
+  font-family:
+    "Golos Text",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+body {
+  font-size: var(--book-text-size);
+  line-height: var(--book-text-line-height);
+
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1,
+    "tnum" 0;
+}
+
+/* Табличные цифры в таблицах и коде */
+.content table,
+.content code,
+.content pre {
+  font-feature-settings:
+    "tnum" 1,
+    "zero" 1;
+}
+
+/* Капитель для аббревиатур */
+abbr {
+  letter-spacing: 0.02em;
+}
+
+/* ---------------------------------------------------------
+   Main reading column
+   --------------------------------------------------------- */
+
+.content {
+  max-width: var(--book-content-width);
+}
+
+.page-wrapper {
+  padding-bottom: 4rem;
+}
+
+/* ---------------------------------------------------------
+   Headings
+   --------------------------------------------------------- */
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  font-family:
+    "Golos Text",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: var(--book-heading-line-height);
+  letter-spacing: -0.015em;
+  color: inherit;
+}
+
+.content h1 {
+  margin-top: 3.5rem;
+  margin-bottom: 2rem;
+
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+}
+
+.content h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.6rem;
+
+  font-size: 1.6875rem; /* 27px */
+  font-weight: 700;
+}
+
+.content h3 {
+  margin-top: 2.8rem;
+  margin-bottom: 1.25rem;
+
+  font-size: 1.375rem; /* 22px */
+  font-weight: 650;
+}
+
+.content h4 {
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+
+  font-size: 1.1875rem; /* 19px */
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   Paragraphs
+   --------------------------------------------------------- */
+
+.content p {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------------------------------------------------------
+   Lists
+   --------------------------------------------------------- */
+
+.content ul,
+.content ol {
+  margin-top: 0.6rem;
+  margin-bottom: 1.2rem;
+  padding-left: 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------
+   Main question
+   --------------------------------------------------------- */
+
+.main-question {
+  position: relative;
+
+  margin: 2.8rem 0 3rem;
+  padding: 1.2rem 0 1.4rem;
+
+  background: transparent;
+
+  color: #071a3d !important;
+
+  font-size: 1.08em;
+  line-height: 1.6;
+
+  text-shadow:
+    0 0 1px rgba(7, 26, 61, 0.35);
+}
+
+.main-question::before {
+  content: "";
+
+  display: block;
+  width: 3rem;
+  height: 3px;
+
+  margin-bottom: 1.1rem;
+
+  background-color: #071a3d !important;
+
+  border-radius: 2px;
+}
+
+.main-question p {
+  margin: 0;
+  color: inherit !important;
+}
+
+.main-question strong {
+  display: block;
+
+  margin-bottom: 0.45rem;
+
+  color: inherit !important;
+
+  font-size: 0.78em;
+  font-weight: 700;
+  line-height: 1.3;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   Main question — mdBook dark themes
+   --------------------------------------------------------- */
+
+html.navy .main-question,
+html.ayu .main-question,
+html.coal .main-question {
+  color: #b9bbcf !important;
+
+  text-shadow:
+    0 0 2px rgba(155, 188, 255, 0.28);
+}
+
+html.navy .main-question p,
+html.navy .main-question strong,
+html.ayu .main-question p,
+html.ayu .main-question strong,
+html.coal .main-question p,
+html.coal .main-question strong {
+  color: #b9bbcf !important;
+}
+
+html.navy .main-question::before,
+html.ayu .main-question::before,
+html.coal .main-question::before {
+  background-color: #b9bbcf !important;
+}
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------
+   Source quotations
+   --------------------------------------------------------- */
+
+.content blockquote {
+  margin: 2rem 0;
+  padding: 0.35rem 0 0.35rem 1.4rem;
+
+  color: #6b7280;
+  background: transparent;
+
+  font-size: 0.95em;
+  line-height: 1.65;
+  font-style: italic;
+
+  border: none;
+  border-left: 2px solid #9ca3af;
+}
+
+.content blockquote p {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+}
+
+.content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark theme */
+body.night .content blockquote {
+  color: #aeb4bd;
+  background: transparent;
+  border: none;
+  border-left-color: #737983;
+}
+
+
+/* ---------------------------------------------------------
+   Epigraph
+   --------------------------------------------------------- */
+
+.content .epigraph {
+  max-width: 680px;
+  margin: 3rem auto 4rem;
+  padding: 0;
+
+  font-size: 1.15em;
+  line-height: 1.6;
+  font-style: italic;
+  text-align: center;
+}
+
+.content .epigraph p {
+  margin-bottom: 0.5rem;
+}
+
+.content .epigraph cite {
+  display: block;
+  margin-top: 0.75rem;
+
+  font-size: 0.9em;
+  font-style: normal;
+}
+
+/* ---------------------------------------------------------
+   Callouts
+   --------------------------------------------------------- */
+
+.callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem 1rem 3.2rem;
+}
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+.content a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+/* ---------------------------------------------------------
+   Code
+   --------------------------------------------------------- */
+
+.content code {
+  font-size: 0.88em;
+}
+
+.content pre {
+  margin: 1.6rem 0;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* ---------------------------------------------------------
+   Tables
+   --------------------------------------------------------- */
+
+.content table {
+  width: 100%;
+  margin: 1.8rem 0;
+  font-size: 0.95em;
+}
+
+.content th,
+.content td {
+  padding: 0.7rem 0.8rem;
+}
+
+/* ---------------------------------------------------------
+   Horizontal rules
+   --------------------------------------------------------- */
+
+.content hr {
+  margin: 3rem 0;
+}
+
+/* ---------------------------------------------------------
+   Dark theme
+   --------------------------------------------------------- */
+
+body.night {
+  color: #e6e6e6;
+}
+
+body.night .content,
+body.night .content p,
+body.night .content li,
+body.night .content td,
+body.night .content th {
+  color: #e6e6e6;
+}
+
+body.night .content h1,
+body.night .content h2,
+body.night .content h3,
+body.night .content h4 {
+  color: #ffffff;
+}
+
+body.night .content blockquote {
+  color: #d6d6d6;
+}
+
+body.night .content a {
+  color: #8ab4f8;
+}
+
+body.night .content code {
+  color: #eeeeee;
+}
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 100%;
+    --book-text-size: 17px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .content h1 {
+    margin-top: 2.2rem;
+    margin-bottom: 1.5rem;
+
+    font-size: 1.875rem; /* 30px */
+  }
+
+  .content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.3rem;
+
+    font-size: 1.625rem; /* 26px */
+  }
+
+  .content h3 {
+    margin-top: 2.2rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.375rem; /* 22px */
+    font-weight: 650;
+  }
+
+  .content h4 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+
+    font-size: 1.1875rem; /* 19px */
+    line-height: 1.3;
+    font-weight: 650;
+  }
+
+  .content blockquote {
+    margin: 1.5rem 0;
+    padding: 0.3rem 0 0.3rem 1rem;
+  }
+
+  .content .epigraph {
+    margin: 2.5rem auto 3rem;
+    padding: 0 0.5rem;
+
+    font-size: 1.08em;
+  }
+
+  .content table {
+    font-size: 0.9em;
+  }
+}
+
+/* =========================================================
+   Typography: Justify + Hyphenation
+   ========================================================= */
+
+/* Базовое состояние — левое выравнивание */
+.content p,
+.content li {
+  text-align: left;
+  hyphens: none;
+}
+
+/* ---------------------------------------------------------
+   Desktop reading typography
+   --------------------------------------------------------- */
+
+@media (min-width: 800px) {
+  .content p,
+  .content li {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+
+    hanging-punctuation: first last;
+
+    -webkit-hyphenate-limit-before: 3;
+    -webkit-hyphenate-limit-after: 2;
+    -webkit-hyphenate-limit-lines: 2;
+
+    hyphenate-limit-chars: 6 3 2;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+  }
+}
+
+/* ---------------------------------------------------------
+   Elements that should never be justified
+   --------------------------------------------------------- */
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content pre,
+.content code,
+.content table,
+.content .callout-title,
+.content .quote-highlight,
+.content .reading-time,
+.chapter-navigation a {
+  text-align: left;
+  hyphens: none;
+}
+
+/* Цитаты — левое выравнивание */
+.content blockquote {
+  text-align: left;
+  hyphens: none;
+}
+
+/* Списки на мобильных — левое выравнивание */
+@media (max-width: 799px) {
+  .content ul,
+  .content ol {
+    text-align: left;
+  }
+}
+
+/* Последний абзац главы — левое выравнивание */
+.content main > p:last-of-type {
+  text-align: left;
+}
+
+
+
+
+
+
+/* =========================================================
+   Book statistics
+   ========================================================= */
+
+.book-statistics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+
+  margin-top: 3rem;
+  padding-top: 1rem;
+
+  border-top: 1px solid var(--table-border-color);
+
+  color: var(--fg);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  opacity: 0.65;
+}
+
+.book-statistics-separator {
+  opacity: 0.5;
+}
+
+.book-statistics [hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .book-statistics {
+    margin-top: 2.5rem;
+    font-size: 0.78rem;
+    gap: 0.3rem;
+  }
+}
