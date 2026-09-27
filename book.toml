@@ -5,7 +5,7 @@ language = "ru"
 description = "Книга об архитектуре контроля доступа: от ролей к отношениям и контексту"
 
 [output.html]
-curly-quotes = true
+smart-punctuation = true
 git-repository-url = "https://github.com/Taryon-ru/from-object-to-context"
 edit-url-template = "https://github.com/Taryon-ru/from-object-to-context/edit/main/src/{path}"
 no-section-label = true
