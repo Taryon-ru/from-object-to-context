@@ -1,0 +1,14 @@
+[book]
+title = "От объекта к контексту"
+authors = ["Mikhail.A.I."]
+language = "ru"
+description = "Книга об архитектуре контроля доступа: от ролей к отношениям и контексту"
+
+[output.html]
+curly-quotes = true
+git-repository-url = "https://github.com/Taryon-ru/from-object-to-context"
+edit-url-template = "https://github.com/Taryon-ru/from-object-to-context/edit/main/src/{path}"
+no-section-label = true
+
+[build]
+build-dir = "book"
