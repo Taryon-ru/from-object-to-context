@@ -21,6 +21,18 @@
   --book-heading-line-height: 1.2;
 }
 
+.nav-chapters,
+.mobile-nav-chapters {
+    font-size: 1.2em; /* было 2.5em */
+}
+
+.nav-chapters {
+    max-width: 50px;  /* было 150px */
+    min-width: 50px;  /* было 90px */
+}
+
+
+
 /* ---------------------------------------------------------
    Base
    --------------------------------------------------------- */
